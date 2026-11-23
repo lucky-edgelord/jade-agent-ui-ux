@@ -8,7 +8,7 @@ const readImage = f => new Promise((ok, no) => { const r = new FileReader(); r.o
 class JadeComposer extends JadeElement {
   static styles = `
 :host{display:block}
-form{display:flex;flex-direction:column;gap:6px;border:1px solid var(--jade-border);background:var(--jade-surface);border-radius:var(--jade-radius);padding:calc(var(--jade-space) * .75);box-shadow:var(--jade-shadow);transition:border-color .15s}
+form{display:flex;flex-direction:column;gap:6px;border:1px solid var(--jade-border);clip-path:polygon(0 0,calc(100% - var(--jade-cut,0px)) 0,100% var(--jade-cut,0px),100% 100%,var(--jade-cut,0px) 100%,0 calc(100% - var(--jade-cut,0px)));box-shadow:var(--jade-glow,none);background:var(--jade-surface);border-radius:var(--jade-radius);padding:calc(var(--jade-space) * .75);box-shadow:var(--jade-shadow);transition:border-color .15s}
 form:focus-within{border-color:var(--jade-accent)}
 form.drag{border-style:dashed;border-color:var(--jade-accent)}
 .row{display:flex;align-items:flex-end;gap:6px}

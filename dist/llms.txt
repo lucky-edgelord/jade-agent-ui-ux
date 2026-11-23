@@ -1,12 +1,12 @@
-# Jade Agent UI/UX 1.2.0
+# Jade Agent UI/UX 1.3.0
 
-> Themeable, lazy-loaded web components for AI agents, from a CDN. Made for Jade Agent Kit. Load https://cdn.jsdelivr.net/gh/lucky-edgelord/Jade-agent-ui-ux@v1.2.0/dist/jade-ui.js once;
-> each <jade-*> element downloads its module the first time it appears. Machine-readable: https://cdn.jsdelivr.net/gh/lucky-edgelord/Jade-agent-ui-ux@v1.2.0/dist/catalog.json
+> Themeable, lazy-loaded web components for AI agents, from a CDN. Made for Jade Agent Kit. Load https://cdn.jsdelivr.net/gh/lucky-edgelord/Jade-agent-ui-ux@v1.3.0/dist/jade-ui.js once;
+> each <jade-*> element downloads its module the first time it appears. Machine-readable: https://cdn.jsdelivr.net/gh/lucky-edgelord/Jade-agent-ui-ux@v1.3.0/dist/catalog.json
 
 ## Use it
 ```html
 <script type="module">
-  import { setTheme } from 'https://cdn.jsdelivr.net/gh/lucky-edgelord/Jade-agent-ui-ux@v1.2.0/dist/jade-ui.js';
+  import { setTheme } from 'https://cdn.jsdelivr.net/gh/lucky-edgelord/Jade-agent-ui-ux@v1.3.0/dist/jade-ui.js';
   import { createKit } from 'https://cdn.jsdelivr.net/gh/lucky-edgelord/Jade-agent-kit@v3.1.0/dist/jade-agent-kit.js';
   const kit = await createKit({ ollamaKey: '…' });
   await document.querySelector('jade-chat').connect(kit, { approve: ['bash', 'write', 'edit'] });
@@ -16,7 +16,7 @@
 
 ## Theming
 setTheme({ preset, mode: 'auto'|'light'|'dark', density: 'compact'|'cozy'|'comfortable', radius, tokens, target }).
-Presets: jade, midnight, paper, contrast. Tokens (CSS custom properties): --jade-bg, --jade-surface, --jade-surface-2, --jade-fg, --jade-muted, --jade-border, --jade-accent, --jade-accent-fg, --jade-user, --jade-user-fg, --jade-code, --jade-ok, --jade-warn, --jade-danger, --jade-syn-k, --jade-syn-s, --jade-syn-n, --jade-syn-c, --jade-radius, --jade-space, --jade-font, --jade-mono, --jade-font-size, --jade-shadow, --jade-focus.
+Presets: jade, classic, midnight, paper, contrast. Tokens (CSS custom properties): --jade-bg, --jade-surface, --jade-surface-2, --jade-fg, --jade-muted, --jade-border, --jade-accent, --jade-accent-fg, --jade-user, --jade-user-fg, --jade-code, --jade-ok, --jade-warn, --jade-danger, --jade-syn-k, --jade-syn-s, --jade-syn-n, --jade-syn-c, --jade-radius, --jade-space, --jade-font, --jade-mono, --jade-font-size, --jade-shadow, --jade-focus, --jade-display, --jade-cut, --jade-glow, --jade-accent-2.
 Every element also exposes ::part() names (below).
 
 ## Elements

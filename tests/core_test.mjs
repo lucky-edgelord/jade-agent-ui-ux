@@ -1,8 +1,10 @@
 // The loader, lazy loading and theming.
 import { start, sleep } from './_harness.mjs';
+import { readFileSync } from 'node:fs';
+const PKG = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
 const t = await start(); const { ok, ev } = t;
 
-ok((await ev(() => UI.VERSION)) === '1.2.0', 'VERSION');
+ok((await ev(() => UI.VERSION)) === PKG.version, 'VERSION matches package.json');
 ok(t.loaded().every(f => /^(jade-ui|theme|index|chunk-[\w]+)\.js$/.test(f)), 'importing the loader fetches only the core: ' + t.loaded().join(', '));
 // nothing is defined until it appears
 ok(!(await ev(() => !!customElements.get('jade-chat'))), 'jade-chat is not loaded before it is used');
@@ -22,7 +24,7 @@ ok(await ev(() => !!customElements.get('jade-tool-call') && !!customElements.get
 ok(await ev(() => UI.load('nope').then(() => false, e => /unknown element/.test(e.message))), 'load() rejects unknown elements');
 
 // theme: the default is applied by the first element; presets load when used
-ok(await ev(() => getComputedStyle(document.documentElement).getPropertyValue('--jade-accent').trim() === '#0b7a5b'), 'default theme applied');
+ok(await ev(() => getComputedStyle(document.documentElement).getPropertyValue('--jade-accent').trim() === '#0a8f63'), 'default theme applied');
 ok(!t.loaded().some(f => f.includes('midnight')), 'other presets are not fetched up front');
 await ev(() => UI.setTheme({ preset: 'midnight', mode: 'dark' }));
 ok(t.loaded().some(f => f.includes('midnight')), 'a preset downloads when chosen');

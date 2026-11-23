@@ -47,7 +47,7 @@ class JadeSurface extends JadeElement {
 .row{align-items:center}.row[data-align=start]{align-items:flex-start}.row[data-align=end]{align-items:flex-end}.row[data-align=stretch]{align-items:stretch}.row[data-align=baseline]{align-items:baseline}
 .row[data-justify=center]{justify-content:center}.row[data-justify=end]{justify-content:flex-end}.row[data-justify=between]{justify-content:space-between}.row[data-justify=around]{justify-content:space-around}
 .grid{display:grid}
-.card{border:1px solid var(--jade-border);background:var(--jade-surface);border-radius:var(--jade-radius);display:flex;flex-direction:column;gap:calc(var(--jade-space) * 1.5);min-width:0}
+.card{clip-path:polygon(0 0,calc(100% - var(--jade-cut,0px)) 0,100% var(--jade-cut,0px),100% 100%,var(--jade-cut,0px) 100%,0 calc(100% - var(--jade-cut,0px)));border:1px solid var(--jade-border);box-shadow:var(--jade-glow,none);background:var(--jade-surface);border-radius:var(--jade-radius);display:flex;flex-direction:column;gap:calc(var(--jade-space) * 1.5);min-width:0}
 .card[data-tone=accent]{border-color:var(--jade-accent)}.card[data-tone=ok]{border-color:var(--jade-ok)}.card[data-tone=warn]{border-color:var(--jade-warn)}.card[data-tone=danger]{border-color:var(--jade-danger)}
 .card-h h3{margin:0;font-size:1.05em;font-weight:650}.card-h p{margin:2px 0 0;color:var(--jade-muted);font-size:.9em}
 hr.div{border:0;border-top:1px solid var(--jade-border);margin:calc(var(--jade-space) * .5) 0;width:100%}

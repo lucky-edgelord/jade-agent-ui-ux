@@ -19,7 +19,10 @@ components (`jade site build`).
 - **Agent tools** for Jade Agent Kit: `ui_render`, `ui_update`, `ui_read`, `ui_components`, `ui_theme`.
 - **A catalog for agents**: [`dist/catalog.json`](dist/catalog.json) and [`dist/llms.txt`](dist/llms.txt) describe
   every element, prop, event, CSS part and surface component, so a coding agent can build pages with it too.
-- **Theming** with `--jade-*` design tokens: four presets, light/dark/auto, density, radius, `::part()`, and scoped themes.
+- **Theming** with `--jade-*` design tokens: the default `jade` preset is Jade's own look from Jade Vault (netrunner green on
+  void black, cut corners, Rajdhani / Chakra Petch / JetBrains Mono loaded lazily, soft glows, and an optional grid + scanline
+  backdrop: `setTheme({ backdrop: true })`). Also `classic` (the pre-1.3 palette), `midnight`, `paper` and `contrast`;
+  light/dark/auto, density, radius, `::part()`, and scoped themes. New tokens: `display`, `cut`, `glow`, `accent-2`.
 - **Dashboards**: `<jade-chart>` (line, area, bar, stacked, horizontal, donut, pie, sparkline) and, on surfaces, `Chart`,
   `Stat` with a sparkline, and `Table` with sort, search, pages and formatted columns (currency, dates, status badges).
 - **A floating chat widget**: `<jade-chat-widget>`, a corner button that opens a chat panel for customer service or
