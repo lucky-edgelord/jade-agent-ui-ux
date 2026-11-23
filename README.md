@@ -32,6 +32,23 @@ components (`jade site build`).
 - Also `<jade-markdown>` (safe, streaming), `<jade-code>`, `<jade-message>`, `<jade-composer>`, `<jade-tool-call>`
   and `<jade-theme-toggle>`.
 
+## Screenshots
+
+The default `jade` preset is Jade's look from Jade Vault. Made by `scripts/screenshots.mjs` from `examples/index.html`.
+
+![The chat streaming a reply, then a tool waiting for approval](docs/img/chat-demo.gif)
+
+| | |
+|---|---|
+| ![Chat and a page surface](docs/img/desk-reply.webp)<br>**`<jade-chat>`** with a surface the agent drew | ![A form built by the agent](docs/img/desk-form.webp)<br>**`<jade-surface>`**: a form from declarative JSON |
+| ![Approval](docs/img/mob-approve.webp)<br>**Approvals** on a phone: the agent asks before running a tool | ![Phone](docs/img/mob-reply.webp)<br>**Phone** layout |
+
+Presets, same page:
+
+| `jade` | `classic` | `midnight` | `paper` | `contrast` |
+|---|---|---|---|---|
+| ![](docs/img/theme-jade.webp) | ![](docs/img/theme-classic.webp) | ![](docs/img/theme-midnight.webp) | ![](docs/img/theme-paper.webp) | ![](docs/img/theme-contrast.webp) |
+
 ## Quick start
 
 ```html
@@ -250,7 +267,7 @@ types), the surface `spec`, and the theme `tokens` and `presets`. In code: `cons
 npm install && npx playwright install chromium
 npm test                       # builds dist/ and runs the browser tests (tests/*_test.mjs)
 JUI_SRC=1 node tests/run.mjs   # the same tests against src/
-node scripts/screenshots.mjs   # screenshots of the demo, desktop light and phone dark
+node scripts/screenshots.mjs   # the README screenshots and GIF into docs/img (needs ffmpeg)
 ```
 
 `tests/kit_test.mjs` runs the chat against the real Jade Agent Kit, and `tests/storefront_test.mjs` runs the account
