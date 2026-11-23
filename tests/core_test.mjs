@@ -1,8 +1,10 @@
 // The loader, lazy loading and theming.
 import { start, sleep } from './_harness.mjs';
+import { readFileSync } from 'node:fs';
+const PKG = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
 const t = await start(); const { ok, ev } = t;
 
-ok((await ev(() => UI.VERSION)) === '1.2.0', 'VERSION');
+ok((await ev(() => UI.VERSION)) === PKG.version, 'VERSION matches package.json');
 ok(t.loaded().every(f => /^(jade-ui|theme|index|chunk-[\w]+)\.js$/.test(f)), 'importing the loader fetches only the core: ' + t.loaded().join(', '));
 // nothing is defined until it appears
 ok(!(await ev(() => !!customElements.get('jade-chat'))), 'jade-chat is not loaded before it is used');
