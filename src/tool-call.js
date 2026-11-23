@@ -10,7 +10,7 @@ const pretty = v => typeof v === 'string' ? v : JSON.stringify(v, null, 2);
 class JadeToolCall extends JadeElement {
   static styles = `
 :host{display:block;margin:6px 0}
-details{border:1px solid var(--jade-border);border-radius:calc(var(--jade-radius) * .66);background:var(--jade-surface);overflow:hidden}
+details{clip-path:polygon(0 0,calc(100% - var(--jade-cut,0px)) 0,100% var(--jade-cut,0px),100% 100%,var(--jade-cut,0px) 100%,0 calc(100% - var(--jade-cut,0px)));border:1px solid var(--jade-border);border-left:2px solid var(--jade-accent);border-radius:calc(var(--jade-radius) * .66);background:var(--jade-surface);overflow:hidden}
 summary{display:flex;align-items:center;gap:8px;padding:6px 10px;cursor:pointer;list-style:none;font-size:.88em;min-height:34px}
 summary::-webkit-details-marker{display:none}
 summary .chev{transition:transform .15s;color:var(--jade-muted)} details[open] .chev{transform:rotate(90deg)}

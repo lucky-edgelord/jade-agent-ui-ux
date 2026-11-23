@@ -25,7 +25,7 @@ class JadeChatWidget extends JadeElement {
 .wrap{position:relative;width:56px;height:56px;margin-left:auto}
 :host([position=bottom-left]) .wrap{margin-left:0}
 .panel{position:absolute;bottom:72px;right:0;width:var(--jade-widget-width,380px);height:var(--jade-widget-height,560px);max-height:calc(100vh - 110px);max-width:calc(100vw - 32px);
-  display:flex;flex-direction:column;background:var(--jade-bg,#fff);color:var(--jade-fg);border:1px solid var(--jade-border);border-radius:var(--jade-radius,12px);
+  display:flex;flex-direction:column;background:var(--jade-bg,#fff);color:var(--jade-fg);border:1px solid var(--jade-border);clip-path:polygon(0 0,calc(100% - var(--jade-cut,0px)) 0,100% var(--jade-cut,0px),100% 100%,var(--jade-cut,0px) 100%,0 calc(100% - var(--jade-cut,0px)));box-shadow:var(--jade-glow,none);border-radius:var(--jade-radius,12px);
   box-shadow:0 18px 50px rgb(0 0 0/.25);overflow:hidden;transform-origin:bottom right;animation:pop .16s ease-out}
 :host([position=bottom-left]) .panel{right:auto;left:0;transform-origin:bottom left}
 @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}}

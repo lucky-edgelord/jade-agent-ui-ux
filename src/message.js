@@ -14,10 +14,10 @@ class JadeMessage extends JadeElement {
 :host{display:block;padding:calc(var(--jade-space) * .75) 0}
 .row{display:flex;flex-direction:column;gap:4px;align-items:flex-start}
 :host([role=user]) .row{align-items:flex-end}
-.who{font-size:.78em;font-weight:600;color:var(--jade-muted);display:flex;gap:8px;align-items:center}
+.who{font-size:.78em;font-weight:600;color:var(--jade-accent);font-family:var(--jade-display,inherit);text-transform:uppercase;letter-spacing:.14em;display:flex;gap:8px;align-items:center}
 .who .meta{font-weight:400;font-family:var(--jade-mono);font-size:.95em}
 .bubble{max-width:100%;min-width:0}
-:host([role=user]) .bubble{background:var(--jade-user);color:var(--jade-user-fg);padding:calc(var(--jade-space) * 1.1) calc(var(--jade-space) * 1.6);border-radius:var(--jade-radius) var(--jade-radius) calc(var(--jade-radius) * .3) var(--jade-radius);max-width:min(85%,640px);white-space:pre-wrap;overflow-wrap:anywhere}
+:host([role=user]) .bubble{clip-path:polygon(0 0,calc(100% - var(--jade-cut,0px)) 0,100% var(--jade-cut,0px),100% 100%,var(--jade-cut,0px) 100%,0 calc(100% - var(--jade-cut,0px)));border:1px solid color-mix(in srgb,var(--jade-accent) 35%,transparent);background:var(--jade-user);color:var(--jade-user-fg);padding:calc(var(--jade-space) * 1.1) calc(var(--jade-space) * 1.6);border-radius:var(--jade-radius) var(--jade-radius) calc(var(--jade-radius) * .3) var(--jade-radius);max-width:min(85%,640px);white-space:pre-wrap;overflow-wrap:anywhere}
 :host([role=assistant]) .bubble{width:100%}
 :host([role=system]) .bubble{font-size:.85em;color:var(--jade-muted);font-style:italic}
 :host([kind=action]) .bubble{background:transparent;border:1px dashed var(--jade-border);color:var(--jade-muted);font-size:.85em;padding:4px 10px;font-family:var(--jade-mono)}

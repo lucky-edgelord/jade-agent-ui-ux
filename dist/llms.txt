@@ -16,7 +16,7 @@
 
 ## Theming
 setTheme({ preset, mode: 'auto'|'light'|'dark', density: 'compact'|'cozy'|'comfortable', radius, tokens, target }).
-Presets: jade, midnight, paper, contrast. Tokens (CSS custom properties): --jade-bg, --jade-surface, --jade-surface-2, --jade-fg, --jade-muted, --jade-border, --jade-accent, --jade-accent-fg, --jade-user, --jade-user-fg, --jade-code, --jade-ok, --jade-warn, --jade-danger, --jade-syn-k, --jade-syn-s, --jade-syn-n, --jade-syn-c, --jade-radius, --jade-space, --jade-font, --jade-mono, --jade-font-size, --jade-shadow, --jade-focus.
+Presets: jade, classic, midnight, paper, contrast. Tokens (CSS custom properties): --jade-bg, --jade-surface, --jade-surface-2, --jade-fg, --jade-muted, --jade-border, --jade-accent, --jade-accent-fg, --jade-user, --jade-user-fg, --jade-code, --jade-ok, --jade-warn, --jade-danger, --jade-syn-k, --jade-syn-s, --jade-syn-n, --jade-syn-c, --jade-radius, --jade-space, --jade-font, --jade-mono, --jade-font-size, --jade-shadow, --jade-focus, --jade-display, --jade-cut, --jade-glow, --jade-accent-2.
 Every element also exposes ::part() names (below).
 
 ## Elements

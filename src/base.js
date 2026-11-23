@@ -11,10 +11,14 @@ export const BASE_CSS = `
 button{font:inherit;color:inherit}
 .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--jade-border);background:var(--jade-surface);color:var(--jade-fg);
-  border-radius:calc(var(--jade-radius,12px) * .66);padding:calc(var(--jade-space,8px) * .6) calc(var(--jade-space,8px) * 1.5);cursor:pointer;font-size:.92em;line-height:1.3;min-height:32px}
-.btn:hover{background:var(--jade-surface-2)}
-.btn.primary{background:var(--jade-accent);color:var(--jade-accent-fg);border-color:transparent}
-.btn.primary:hover{filter:brightness(1.07)}
+  border-radius:calc(var(--jade-radius,12px) * .66);padding:calc(var(--jade-space,8px) * .6) calc(var(--jade-space,8px) * 1.5);cursor:pointer;font-size:.92em;line-height:1.3;min-height:32px;
+  clip-path:polygon(0 0,calc(100% - var(--jade-cut,0px) * .6) 0,100% calc(var(--jade-cut,0px) * .6),100% 100%,calc(var(--jade-cut,0px) * .6) 100%,0 calc(100% - var(--jade-cut,0px) * .6));
+  font-family:var(--jade-display,inherit);letter-spacing:.04em;font-weight:600;transition:background .15s,box-shadow .15s,color .15s}
+.btn:hover{background:var(--jade-surface-2);color:var(--jade-accent)}
+.btn.primary{background:var(--jade-accent);color:var(--jade-accent-fg);border-color:transparent;text-transform:uppercase;letter-spacing:.08em}
+.btn.primary:hover{filter:brightness(1.07);box-shadow:var(--jade-glow,none);color:var(--jade-accent-fg)}
+.cut{clip-path:polygon(0 0,calc(100% - var(--jade-cut,0px)) 0,100% var(--jade-cut,0px),100% 100%,var(--jade-cut,0px) 100%,0 calc(100% - var(--jade-cut,0px)))}
+.disp,h1,h2,h3{font-family:var(--jade-display,inherit);letter-spacing:.06em}
 .btn.danger{background:var(--jade-danger);color:#fff;border-color:transparent}
 .btn.ghost{background:transparent;border-color:transparent}
 .btn.ghost:hover{background:var(--jade-surface-2)}

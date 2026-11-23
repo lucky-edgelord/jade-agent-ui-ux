@@ -10,7 +10,7 @@ export const hasKit = fs.existsSync(path.join(KIT, 'dist/jade-agent-kit.js'));
 const TYPES = { '.js': 'text/javascript', '.mjs': 'text/javascript', '.html': 'text/html', '.wasm': 'application/wasm', '.json': 'application/json', '.map': 'application/json', '.css': 'text/css', '.txt': 'text/plain' };
 
 export async function start({ from = process.env.JUI_SRC ? 'src/index.js' : 'dist/jade-ui.js', viewport = { width: 900, height: 700 }, colorScheme = 'light' } = {}) {
-  const browser = await pw.chromium.launch();
+  const browser = await pw.chromium.launch(process.env.CHROME ? { executablePath: process.env.CHROME } : {});
   const ctx = await browser.newContext({ ignoreHTTPSErrors: true, viewport, colorScheme, permissions: ['clipboard-read', 'clipboard-write'] });
   const requests = []; ctx.on('request', r => requests.push(new URL(r.url()).pathname));
   await ctx.route('https://ui.test/**', route => {

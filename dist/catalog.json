@@ -1204,10 +1204,15 @@
    "--jade-mono",
    "--jade-font-size",
    "--jade-shadow",
-   "--jade-focus"
+   "--jade-focus",
+   "--jade-display",
+   "--jade-cut",
+   "--jade-glow",
+   "--jade-accent-2"
   ],
   "presets": [
    "jade",
+   "classic",
    "midnight",
    "paper",
    "contrast"

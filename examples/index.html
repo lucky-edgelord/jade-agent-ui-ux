@@ -8,11 +8,13 @@
   html, body { margin: 0; height: 100%; background: var(--jade-bg); color: var(--jade-fg); font-family: var(--jade-font, system-ui); }
   .app { display: grid; grid-template-columns: minmax(0, 1fr) 300px; grid-template-rows: auto minmax(0, 1fr); height: 100dvh; }
   header { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--jade-border); flex-wrap: wrap; }
-  header strong { margin-right: auto; }
-  header input { font: inherit; font-size: .9em; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--jade-border); background: var(--jade-surface); color: inherit; width: 200px; max-width: 100%; }
-  header button { font: inherit; font-size: .9em; padding: 6px 12px; border-radius: 8px; border: 0; background: var(--jade-accent); color: var(--jade-accent-fg); cursor: pointer; }
+  header strong { margin-right: auto; font-family: var(--jade-display); text-transform: uppercase; letter-spacing: .14em; color: var(--jade-accent); text-shadow: 0 0 12px color-mix(in srgb, var(--jade-accent) 45%, transparent); }
+  header { background: linear-gradient(180deg, color-mix(in srgb, var(--jade-surface) 92%, transparent), color-mix(in srgb, var(--jade-bg) 92%, transparent)); position: relative; z-index: 1; }
+  .app > * { position: relative; z-index: 1; }
+  header input { font: inherit; font-size: .9em; padding: 6px 10px; border-radius: 2px; font-family: var(--jade-mono); border: 1px solid var(--jade-border); background: var(--jade-surface); color: inherit; width: 200px; max-width: 100%; }
+  header button { font: inherit; font-family: var(--jade-display); font-weight: 600; text-transform: uppercase; letter-spacing: .1em; font-size: .9em; padding: 6px 14px; border-radius: 0; clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px)); border: 0; background: var(--jade-accent); color: var(--jade-accent-fg); cursor: pointer; }
   aside { border-left: 1px solid var(--jade-border); padding: 16px; overflow: auto; }
-  aside h2 { font-size: .8em; text-transform: uppercase; letter-spacing: .06em; color: var(--jade-muted); margin: 0 0 10px; }
+  aside h2 { font-size: .8em; text-transform: uppercase; letter-spacing: .14em; color: var(--jade-accent); font-family: var(--jade-display); margin: 0 0 10px; }
   @media (max-width: 760px) { .app { grid-template-columns: 1fr; } aside { display: none; } header input { width: 140px; } }
 </style>
 </head>
@@ -33,7 +35,8 @@
   </aside>
 </div>
 <script type="module">
-  import { uiTools } from '../dist/jade-ui.js';
+  import { uiTools, setTheme } from '../dist/jade-ui.js';
+  setTheme({ backdrop: true });   // Vault's grid + scanlines behind the demo
   const chat = document.getElementById('chat');
   await customElements.whenDefined('jade-chat');
 
